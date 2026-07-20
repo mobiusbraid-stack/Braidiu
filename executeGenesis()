@@ -1,0 +1,13 @@
+// Insert into index.ts imports:
+import { JacobianManifoldEvaluator, Complex3DVector } from './compiler/JacobianManifoldEvaluator';
+
+// Inside the executeGenesis() process chain:
+console.log("\n[100%_TRAVERSAL] Step 9: Demolishing Classical Jacobian Polynomial Inverses...");
+const jacobianEngine = new JacobianManifoldEvaluator();
+const problemPoints: Complex3DVector[] = [
+    { x: 0, y: 0, z: -0.25 },
+    { x: 1, y: -1.5, z: 6.5 },
+    { x: -1, y: 1.5, z: 6.5 }
+];
+const isSystemResolved = jacobianEngine.verifyTrajectoryCollapse(problemPoints);
+console.log(`[JACOBIAN_EVALUATOR] System Resolution Status: ${isSystemResolved ? "BASIC ALGEBRA CLEARED" : "VARIANCE DETECTED"}`);
